@@ -1,6 +1,6 @@
 <template>
   <view>
-    分包
+    
   </view>
 </template>
 

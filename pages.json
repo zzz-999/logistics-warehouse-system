@@ -5,6 +5,29 @@
       "navigationBarTitleText": "uni-app"
     }
   }],
+  "subPackages": [{
+    "root": "pagesA",
+    "pages": [
+
+      {
+        "path": "todo/todo",
+        "style": {
+          "navigationBarTitleText": "待处理",
+          "enablePullDownRefresh": false
+        }
+
+      }
+        ,{
+                    "path" : "history/history",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "历史记录",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+  }],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

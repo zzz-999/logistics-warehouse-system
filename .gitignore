@@ -1,2 +1,7 @@
 /node_modules
 /unpackage/dist
+components/ay-qrcode/weapp-qrcode.js
+
+components/ay-qrcode/qrcode_wx.js
+
+components/ay-qrcode/ay-qrcode.vue

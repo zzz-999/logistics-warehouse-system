@@ -4,6 +4,13 @@
     "style": {
       "navigationBarTitleText": "uni-app"
     }
+  }, {
+    "path": "pages/my/my",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
   }],
   "subPackages": [{
     "root": "pagesA",
@@ -16,25 +23,38 @@
           "enablePullDownRefresh": false
         }
 
+      }, {
+        "path": "history/history",
+        "style": {
+          "navigationBarTitleText": "历史记录",
+          "enablePullDownRefresh": false
+        }
+
       }
-        ,{
-                    "path" : "history/history",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "历史记录",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-            ]
+    ]
   }],
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "智能仓储管理系统",
     "navigationBarBackgroundColor": "#427bee",
     "backgroundColor": "#F8F8F8",
     "app-plus": {
       "background": "#efeff4"
     }
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./static/uni.png",
+        "selectedIconPath": "./static/c1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./static/logo.png",
+        "selectedIconPath": "./static/c2.png"
+      }
+    ]
   }
 }

@@ -2,25 +2,26 @@
   <view>
     <image src="../../static/login_1.png" mode="aspectFit" style="width: 100%;background-color: #3388ec;height: 150px;">
     <uni-card title="寄件人">
-      <uni-forms ref="fromForm" :rules="rules">
+      <uni-forms ref="fromForm" :rules="rules" :modelValue="fromForm">
         <uni-forms-item label="名称" name="name">
           <uni-easyinput v-model="fromForm.name" placeholder="输入寄件人名称"></uni-easyinput>
         </uni-forms-item>
         <uni-forms-item label="电话" name="tel">
-          <uni-easyinput v-model="fromForm.name" placeholder="输入寄件人电话"></uni-easyinput>
+          <uni-easyinput v-model="fromForm.tel" placeholder="输入寄件人电话"></uni-easyinput>
         </uni-forms-item>
         <uni-forms-item label="地址" name="address">
           <uni-easyinput v-model="fromForm.address" type="textarea" placeholder="输入寄件人地址"></uni-easyinput>
         </uni-forms-item>
       </uni-forms>
     </uni-card>
+    
     <uni-card title="收件人">
-      <uni-forms ref="toForm" :rules="rules">
+      <uni-forms ref="toForm" :rules="rules" :modelValue="toForm">
         <uni-forms-item label="名称" name="name">
           <uni-easyinput v-model="toForm.name" placeholder="输入收件人名称"></uni-easyinput>
         </uni-forms-item>
         <uni-forms-item label="电话" name="tel">
-          <uni-easyinput v-model="toForm.name" placeholder="输入收件人电话"></uni-easyinput>
+          <uni-easyinput v-model="toForm.tel" placeholder="输入收件人电话"></uni-easyinput>
         </uni-forms-item>
         <uni-forms-item label="地址" name="address">
           <uni-easyinput v-model="toForm.address" type="textarea" placeholder="输入收件人地址"></uni-easyinput>
@@ -39,8 +40,25 @@
     data() {
       return {
         fromForm:{},
-        toFrom:{}
+        toForm:{},
+        rules: {
+          name: [{
+            required: true,
+            errorMessage: '输入名称'
+          }],
+          tel: [{
+            required: true,
+            errorMessage: '输入电话'
+          }],
+          address: [{
+            required: true,
+            errorMessage: '输入电话'
+          }]
+        }
       }
+    },
+    created() { 
+      console.log('send')
     },
     methods: {
       save(){

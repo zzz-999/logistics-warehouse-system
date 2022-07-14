@@ -43,7 +43,7 @@
             </uni-row>
           </uni-forms-item>
 
-          <button @click="loginHandle" type="primary">登录</button>
+          <button @click="loginHandle" type="primary" form-type="submit">登录</button>
         </uni-forms>
       </view>
 
@@ -69,8 +69,11 @@
 </template>
 
 <script>
+  import { mapState,mapMutations } from 'vuex'
+  
   export default {
     name: 'my-login',
+    computed: { ...mapState('my',['myStatus']) },
     data() {
       return {
         loginForm: {},
@@ -104,6 +107,7 @@
       }
     },
     methods: {
+      ...mapMutations('my',['updateMyStatus']),
       methodChangeHandle(data) {
         this.loginMethod = data
       },
@@ -112,6 +116,7 @@
         this.$refs.loginForm.validate().then(res => {
           uni.hideLoading()
           uni.$showMsg('登录')
+          this.updateMyStatus(2)
         }).catch(err => {
           uni.hideLoading()
           uni.$showMsg('请输入正确的信息')

@@ -18,8 +18,9 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+  import { mapMutations,mapState } from 'vuex'
   export default {
+    computed: { ...mapState('my',['userinfo']) },
     name:'my-info',
     data() {
       return {}
@@ -28,7 +29,7 @@
       ...mapMutations('my',['updateMyStatus','updateUserInfo']),
       logout(){
         this.updateMyStatus(1)
-        uni.removeStorageSync('userinfo')
+        this.updateUserInfo(null)
      } 
     }
   }

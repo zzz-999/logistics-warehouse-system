@@ -118,9 +118,9 @@
           uni.$showMsg('登录')
           let user = null
           if (this.loginForm.nickName == '123') {
-            user = { roleId: 1 }
-          } else {
-            user = { roleId: 2 }
+            user = { roleId: 1,nickName: '客户测试号' }
+          } else if(this.loginForm.nickName == '111') {
+            user = { roleId: 2,nickName: '快递员测试号' }
           }
           console.log(user)
           this.updateUserInfo(user)

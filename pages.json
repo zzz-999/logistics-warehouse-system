@@ -1,16 +1,16 @@
 {
   "pages": [{
-    "path": "pages/index/index",
-    "style": {
-      "navigationBarTitleText": "uni-app"
-    }
-  }, {
     "path": "pages/my/my",
     "style": {
       "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
 
+  }, {
+    "path": "pages/index/index",
+    "style": {
+      "navigationBarTitleText": "uni-app"
+    }
   }],
   "subPackages": [{
     "root": "pagesA",
@@ -44,26 +44,22 @@
           "enablePullDownRefresh": false
         }
 
+      }, {
+        "path": "courier-info/courier-info",
+        "style": {
+          "navigationBarTitleText": "",
+          "enablePullDownRefresh": false
+        }
+
+      }, {
+        "path": "courier-list/courier-list",
+        "style": {
+          "navigationBarTitleText": "",
+          "enablePullDownRefresh": false
+        }
+
       }
-        ,{
-                    "path" : "courier-info/courier-info",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "courier-list/courier-list",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-            ]
+    ]
   }],
   "globalStyle": {
     "navigationBarTextStyle": "black",

@@ -6,8 +6,18 @@
         <admin></admin>
         <order-manage></order-manage>
       </view>
-      <view v-else>
+      <view v-else-if="userinfo.roleId === 2">
         <courier-home></courier-home>
+      </view>
+      <view v-else>
+        <navigator open-type="switchTab" url="/pages/my/my">
+          
+        <uni-card>
+          <view style="height: 200px;display: flex;align-items: center;justify-content: center;font-size: 24px;">
+            请先登录
+          </view>
+        </uni-card>
+        </navigator>
       </view>
   </view>
 </template>

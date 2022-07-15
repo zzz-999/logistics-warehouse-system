@@ -1,14 +1,21 @@
 <template>
   <view>
     <image src="../../static/login_1.png" mode="aspectFit" style="width: 100%;background-color: #3388ec;height: 150px;">
-      <admin></admin>
-      <order-manage></order-manage>
+      <button @click="todo"></button>
+      <view v-if="userinfo.roleId === 1">
+        <admin></admin>
+        <order-manage></order-manage>
+      </view>
+      <view v-else>
+        <courier-home></courier-home>
+      </view>
   </view>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
-
+    computed: { ...mapState('my',['userinfo']) },
     data() {
       return {
         href: 'https://uniapp.dcloud.io/component/README?id=uniui',

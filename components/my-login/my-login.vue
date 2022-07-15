@@ -60,8 +60,8 @@
           </uni-col>
         </uni-row>
         <view @click="loginByWX">
-          
-        <image src="../../static/login_3.png" mode="aspectFit" style="width: 320px;height: 20px;"></image>
+
+          <image src="../../static/login_3.png" mode="aspectFit" style="width: 320px;height: 20px;"></image>
         </view>
       </view>
 
@@ -69,11 +69,11 @@
 </template>
 
 <script>
-  import { mapState,mapMutations } from 'vuex'
-  
+  import { mapState, mapMutations } from 'vuex'
+
   export default {
     name: 'my-login',
-    computed: { ...mapState('my',['myStatus']) },
+    computed: { ...mapState('my', ['myStatus']) },
     data() {
       return {
         loginForm: {},
@@ -107,7 +107,7 @@
       }
     },
     methods: {
-      ...mapMutations('my',['updateMyStatus']),
+      ...mapMutations('my', ['updateMyStatus', 'updateUserInfo']),
       methodChangeHandle(data) {
         this.loginMethod = data
       },
@@ -116,6 +116,14 @@
         this.$refs.loginForm.validate().then(res => {
           uni.hideLoading()
           uni.$showMsg('登录')
+          let user = null
+          if (this.loginForm.nickName == '123') {
+            user = { roleId: 1 }
+          } else {
+            user = { roleId: 2 }
+          }
+          console.log(user)
+          this.updateUserInfo(user)
           this.updateMyStatus(2)
         }).catch(err => {
           uni.hideLoading()
@@ -126,7 +134,7 @@
       sendNote() {
         uni.$showMsg('发送验证码')
       },
-      loginByWX(){
+      loginByWX() {
         uni.$showMsg('发起微信登录')
       }
     }

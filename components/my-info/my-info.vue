@@ -25,9 +25,10 @@
       return {}
     },
     methods: { 
-      ...mapMutations('my',['updateMyStatus']),
+      ...mapMutations('my',['updateMyStatus','updateUserInfo']),
       logout(){
         this.updateMyStatus(1)
+        uni.removeStorageSync('userinfo')
      } 
     }
   }
